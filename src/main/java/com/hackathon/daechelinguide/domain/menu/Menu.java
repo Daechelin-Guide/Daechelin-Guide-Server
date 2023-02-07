@@ -24,4 +24,6 @@ public class Menu {
     private String lunch;
 
     private String dinner;
+
+    private String week;
 }
