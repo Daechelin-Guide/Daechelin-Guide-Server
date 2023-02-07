@@ -5,6 +5,9 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class OpenApiInfoDto {
@@ -12,9 +15,12 @@ public class OpenApiInfoDto {
     private String breakfast;
     private String dinner;
     private String lunch;
+    private String week;
+
 
     public OpenApiInfoDto(OpenApiInfoDto data) {
         this.date = data.getDate();
+        this.week = data.getWeek();
         this.breakfast = data.getBreakfast();
         this.dinner = data.getDinner();
         this.lunch = data.getLunch();
@@ -26,6 +32,7 @@ public class OpenApiInfoDto {
                 .breakfast(data.getBreakfast())
                 .dinner(data.getDinner())
                 .lunch(data.getLunch())
+                .week(data.getWeek())
                 .build();
     }
 }
