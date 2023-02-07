@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 
 @Getter
 @AllArgsConstructor
-public class BusinessException {
-    private HttpStatus httpStatus;
+public class BusinessException extends RuntimeException {
+    private final HttpStatus httpStatus;
     private String message;
 }
