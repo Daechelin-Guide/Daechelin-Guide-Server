@@ -32,10 +32,11 @@ public class MenuService {
                 .retrieve()
                 .bodyToMono(OpenApiDataDto.class)
                 .block();
-        if(menuRepository.existsByDate(openApiDataDto.getOpenApiInfoDto().getDate())) {
-            log.info("중복된거 컷!");
-            return openApiDataDto;
-        }
+        if(menuRepository.existsByDate(openApiDataDto.getOpenApiInfoDto().getDate()) ||
+                menuRepository.existsMenuByBreakfastOrLunchOrDinner(openApiDataDto.getOpenApiInfoDto().getBreakfast(),
+                        openApiDataDto.getOpenApiInfoDto().getLunch(),
+                        openApiDataDto.getOpenApiInfoDto().getDinner())
+        ) return openApiDataDto;
         save(openApiDataDto);
         return openApiDataDto;
     }
@@ -51,6 +52,7 @@ public class MenuService {
                 .orElseThrow(() ->
                         new BusinessException(HttpStatus.NOT_FOUND, "급식이 존재하지 않습니다.")
                 );
+        log.info(menu.getBreakfast());
         return BreakfastResponseDto.builder()
                 .breakfast(menu.getBreakfast())
                 .build();
@@ -61,6 +63,7 @@ public class MenuService {
                 .orElseThrow(() ->
                         new BusinessException(HttpStatus.NOT_FOUND, "급식이 존재하지 않습니다.")
                 );
+        log.info(menu.getLunch());
         return LunchResponseDto.builder()
                 .Lunch(menu.getLunch())
                 .build();
@@ -71,6 +74,7 @@ public class MenuService {
                 .orElseThrow(() ->
                         new BusinessException(HttpStatus.NOT_FOUND, "급식이 존재하지 않습니다.")
                 );
+        log.info(menu.getDinner());
         return DinnerResponseDto.builder()
                 .Dinner(menu.getDinner())
                 .build();
