@@ -6,7 +6,7 @@ import lombok.Getter;
 @Getter
 @Builder
 public class ReviewResponseDto {
-    private Integer star;
+    private double star;
     private String menu;
     private String date;
 }
