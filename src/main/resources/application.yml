@@ -1,0 +1,36 @@
+server:
+  port: 4000
+  address: 10.80.161.228
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/dae
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Ajiseok!3676
+
+  jpa:
+    show-sql: false
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+
+
+app:
+  baseurl: https://dodam.b1nd.com/api/meal
+  apikey: 23794b556a2b4d81a2910a71adac99c0
+  sccode: D10
+  schoolcode: 7240454
+  type: json
