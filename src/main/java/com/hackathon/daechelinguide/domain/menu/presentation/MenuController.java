@@ -4,9 +4,8 @@ import com.hackathon.daechelinguide.domain.menu.presentation.dto.api.OpenApiData
 import com.hackathon.daechelinguide.domain.menu.presentation.dto.response.BreakfastResponseDto;
 import com.hackathon.daechelinguide.domain.menu.presentation.dto.response.DinnerResponseDto;
 import com.hackathon.daechelinguide.domain.menu.presentation.dto.response.LunchResponseDto;
-import com.hackathon.daechelinguide.global.config.AppProperties;
 import com.hackathon.daechelinguide.domain.menu.service.MenuService;
-import lombok.Getter;
+import com.hackathon.daechelinguide.global.config.AppProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;

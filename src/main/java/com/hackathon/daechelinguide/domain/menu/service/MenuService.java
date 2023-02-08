@@ -31,7 +31,9 @@ public class MenuService {
                         .build())
                 .retrieve()
                 .bodyToMono(OpenApiDataDto.class)
-                .block();
+                .block()
+                .regeneration();
+        System.out.println(openApiDataDto);
         if(menuRepository.existsByDate(openApiDataDto.getOpenApiInfoDto().getDate()) ||
                 menuRepository.existsMenuByBreakfastOrLunchOrDinner(openApiDataDto.getOpenApiInfoDto().getBreakfast(),
                         openApiDataDto.getOpenApiInfoDto().getLunch(),
