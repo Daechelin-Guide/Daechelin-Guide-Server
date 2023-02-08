@@ -1,13 +1,13 @@
 package com.hackathon.daechelinguide.domain.review;
 
-import com.hackathon.daechelinguide.domain.menu.Menu;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDate;
 
 @Getter
 @Entity
@@ -17,7 +17,7 @@ public class Review {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Review;
 
-    private Integer star;
+    private double star;
 
     private String menu;
 
