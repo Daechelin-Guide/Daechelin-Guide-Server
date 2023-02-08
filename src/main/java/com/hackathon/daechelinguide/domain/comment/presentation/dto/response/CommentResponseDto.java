@@ -1,10 +1,12 @@
 package com.hackathon.daechelinguide.domain.comment.presentation.dto.response;
 
-import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Builder
 public class CommentResponseDto {
+    private String message;
+    private String date;
+    private String menu;
 }

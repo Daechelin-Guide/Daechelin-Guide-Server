@@ -7,4 +7,6 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class CommentRequestDto {
+    private String menu;
+    private String message;
 }
